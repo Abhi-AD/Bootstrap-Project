@@ -55,6 +55,7 @@ class EngagementChoice(models.Model):
         self.image.name = os.path.join(filename)
 
 
+from django.db import models
 
 class ContactFormSubmission(models.Model):
     COUNTRY_CHOICES = [
@@ -64,9 +65,9 @@ class ContactFormSubmission(models.Model):
     ]
     full_name = models.CharField(max_length=100)
     email = models.EmailField()
-    country = models.CharField(choices=COUNTRY_CHOICES, default="nepal")
-    engagement_type = models.ForeignKey(EngagementChoice, on_delete=models.CASCADE)
-    services_needed = models.ManyToManyField("Service")
+    country = models.CharField(max_length=5, choices=COUNTRY_CHOICES, default="nepal")  # Added max_length
+    engagement_type = models.ForeignKey('EngagementChoice', on_delete=models.CASCADE)
+    services_needed = models.ManyToManyField('Service')
     phone_number = models.CharField(max_length=20)
     project_description = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True)
@@ -88,9 +89,6 @@ class ContactFormSubmission(models.Model):
 
     class Meta:
         ordering = ["-post_date"]
-
-
-
 
 
 
