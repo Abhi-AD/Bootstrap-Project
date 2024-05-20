@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './CaseStudyHeader.css';
 import { Link, useParams } from 'react-router-dom';
-import { FaAirbnb, FaCloudversify } from "react-icons/fa6";
+import { FaAirbnb, FaCloudversify, FaEye } from "react-icons/fa6";
 import { MdOutlineDashboard, MdOutlineHorizontalSplit } from 'react-icons/md';
 import axios from 'axios';
 
@@ -73,6 +73,8 @@ const CaseStudyHeader = () => {
                             </div>
                             <div className="our-impact">
                                 <p className="our-impact-count">72%</p>
+                                <p className="our-impact-count">
+                                    <FaEye size={24} />{casestudy.views_count}</p>
                                 <p>vaccination rate achieved for City of Seattle</p>
                             </div>
                         </div>

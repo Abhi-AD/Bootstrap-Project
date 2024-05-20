@@ -55,6 +55,19 @@
 }
 
 
+.explore_icon {
+     background-color: var(--main-color);
+     color: var(--bg-color);
+     padding: 1rem;
+     font-size: 1rem;
+     text-transform: capitalize;
+     width: 15rem;
+     border-radius: 8px;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
 
 
 
@@ -69,7 +82,7 @@
 
 
 .tab-card {
-     padding: 1rem 8rem;
+     padding: 1rem 1rem;
      display: flex;
      color: var(--color-bg);
      justify-content: center;
@@ -77,14 +90,14 @@
 }
 
 .tab-card-col-left {
-     padding: 3rem;
+     margin-top: -4rem;
      flex: 1;
      width: 55%;
 }
 
 
 .tab-card-col-title {
-     font-size: 1rem;
+     font-size: 2rem;
      margin-bottom: 0;
      text-transform: uppercase;
      font-weight: 700;
@@ -123,8 +136,8 @@
 .tab-card-col-right img {
      height: 300px;
      width: 300px;
-     margin-left: 800px;
-     margin-top: -400px;
+     margin-left: 900px;
+     margin-top: -200px;
 
 }
 

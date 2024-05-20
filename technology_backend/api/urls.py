@@ -20,6 +20,7 @@ router.register(r'engagementchoice', views.EngagementChoiceView, 'engagementchoi
 router.register(r'contact', views.ContactFormSubmissionView, 'contact')
 router.register(r'casestudy', views.CaseStudyView, 'casestudy')
 router.register(r'jobapplicationform1', views.JobApplicationView, 'jobapplicationform')
+router.register(r'tabcard', views.TabCardView, 'tabcard')
 
 urlpatterns = [
     path('visit/', include(router.urls)),

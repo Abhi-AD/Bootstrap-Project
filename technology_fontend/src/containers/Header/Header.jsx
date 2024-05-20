@@ -14,10 +14,10 @@ const Header = () => {
   return (
     <div className="technology__header section__padding">
       <div className="technology__header-content">
-        <h1 className="gradient__text">Innovate better,<br />
-          <span>faster.</span>
+        <h1 className="gradient__text">Infuse, <span className='span1'>Integrate</span><br />
+          <span className='span2'>Ignite.</span>
         </h1>
-        <p>We help businesses imagine and create the digital experiences of tomorrow. We succeed together, through the fusion of startup agility, enterprise standards, and world-class engineering.</p>
+        <p>We are all about pushing limits with innovations.From our solutions to systems, we make tech work seamlessly for you. </p>
         <div className='technology__header-link-btn'>
           <Link to="/contact" className='centered-link'><span>Build With us</span><FaArrowRight className='arrow-icon' /></Link>
           <Link to="/join" className='centered-link'><span>Join us</span><FaArrowRight className='arrow-icon' /></Link>

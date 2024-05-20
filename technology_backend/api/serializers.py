@@ -10,6 +10,7 @@ from app2_data.models import (
     JobApplicationStep,
     Job_Vacancy,
     CaseStudy,
+    TabCard
 )
 from app3_user.models import (
     Subscriber,
@@ -89,6 +90,12 @@ class Job_VacancySerializer(serializers.ModelSerializer):
 class JobApplicationStepSerializer(serializers.ModelSerializer):
     class Meta:
         model = JobApplicationStep
+        fields = "__all__"
+
+
+class TabCardSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TabCard
         fields = "__all__"
 
 

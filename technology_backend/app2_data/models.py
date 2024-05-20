@@ -249,5 +249,30 @@ class CaseStudy(models.Model):
 
 
 
-    
+ 
+class TabCard(models.Model):
+    title = models.CharField(max_length=255, unique=True)
+    header = models.CharField(max_length=255,)
+    description = models.TextField()
+    image = models.ImageField(upload_to='product_images/')
 
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        if self.pk:
+            try:
+                existing_instance = TabCard.objects.get(pk=self.pk)
+                if existing_instance.image and existing_instance.image != self.image:
+                    existing_instance.image.delete(save=False)
+            except TabCard.DoesNotExist:
+                pass
+        if self.image:
+            self.rename_image()
+
+        super(TabCard, self).save(*args, **kwargs)  # Corrected from super(CaseStudy, self)
+
+    def rename_image(self):
+        extension = os.path.splitext(self.image.name)[1]
+        filename = f"{self.pk}{extension}"
+        self.image.name = os.path.join("product_images", filename)  # Ensure path is included

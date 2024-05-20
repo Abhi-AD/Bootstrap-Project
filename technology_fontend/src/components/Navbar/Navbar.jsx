@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
-import logo from '../../assests/travel logo.png';
+// import logo from '../../assests/travel logo.png';
 import { Link } from 'react-router-dom';
 import { PiRectangleThin } from 'react-icons/pi';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
 
-const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin,toggleMenu }) => {
+const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu }) => {
      const handleClickOutside = (event) => {
           if (node.current && !node.current.contains(event.target)) {
                toggleService(false);
@@ -13,7 +13,7 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin,toggleMenu 
                toggleMenu(false)
           }
      };
-     
+
      const handleNavLinkClick = () => {
           toggleService(false);
           toggleJoin(false);
@@ -85,7 +85,7 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin,toggleMenu 
                               </div>
                          )}
                     </li>
-                     <li key="blog">
+                    <li key="blog">
                          <Link className='navbar-link' to={`/blog`} onClick={handleNavLinkClick}>Blog</Link>
                     </li>
                     <li key="about">
@@ -137,7 +137,8 @@ const Navbar = () => {
           <div className="header-menu">
                <div className='header'>
                     <Link className='logo' to={`/`}>
-                         <img src={logo} alt="logo" />
+                         {/* <img src={logo} alt="logo" /> */}
+                         <h1>ABC</h1>
                     </Link>
                     <div className="header_link">
                          <Menu
@@ -159,14 +160,15 @@ const Navbar = () => {
                     {toggleMenu && (
                          <div className='header-phone'>
                               <Link className='logo' to={`/`}>
-                                   <img src={logo} alt="logo" />
+                                   <h1>ABC</h1>
+                                   {/* <img src={logo} alt="logo" /> */}
                               </Link>
                               <Menu
                                    isServiceOpen={isServiceOpen}
                                    isJoinOpen={isJoinOpen}
                                    toggleService={toggleService}
                                    toggleJoin={toggleJoin}
-                                   toggleMenu= {setToggleMenu}
+                                   toggleMenu={setToggleMenu}
                                    className="menu" />
                               <Button />
                          </div>

@@ -7,7 +7,7 @@ const Brand = () => {
           <div className="technology__brand brand__padding">
                <div className='container'>
                     <h2 className='title'>Trusted by 150 <span className='plus'>+</span> enterprises, scale-ups and startups.</h2>
-                    <p class="fs-lead">At Leapfrog, we have had the privilege of partnering with some of the most innovative and forward-thinking companies in the tech industry. From big companies to startups that hope to be big one day, they trust us with the expertise and support they need to bring their ideas to life.</p>
+                    <p class="fs-lead">In the realm of digital evolution,we lead the change pioneering the future of transformative solutions. </p>
                </div>
                <div className="image-container ">
                     <img src={microsoft} alt='microsoft' />
