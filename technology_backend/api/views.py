@@ -110,10 +110,13 @@ class CaseStudyView(viewsets.ModelViewSet):
     #     serializer = self.get_serializer(instance)
     #     return Response(serializer.data)
 
+# class TabCardView(viewsets.ModelViewSet):
+#     serializer_class = TabCardSerializer
+#     queryset = TabCard.objects.all()[:10]
+
 class TabCardView(viewsets.ModelViewSet):
     serializer_class = TabCardSerializer
-    queryset = TabCard.objects.all()[:10]
-
+    queryset = TabCard.objects.all()
 
 
 

@@ -48,10 +48,12 @@
      background-color: var(--color-footer);
 }
 
-.tab-item.active {
-     color: var(--color-footer-text);
-     background-color: var(--color-text);
-     font-weight: 700;
+.active {
+     color: var(--color-bg);
+     background-color: var(--color-footer);
+     padding-left: 2rem;
+     padding-top: 3rem;
+     padding-bottom: 3rem;
 }
 
 

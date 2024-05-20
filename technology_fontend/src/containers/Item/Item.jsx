@@ -22,6 +22,7 @@ const Item = () => {
     const openItem = (itemname) => {
         setActiveTab(itemname);
     };
+    console.log(activeTab, "activeTab")
 
     return (
         <div className='service'>
@@ -30,7 +31,9 @@ const Item = () => {
                     {tabCards.map(tabCard => (
                         <li key={tabCard.id} className='tab-item'>
                             <Link
-                                className={activeTab === tabCard.title ? 'tablinks active' : 'tablinks'}
+                                className={
+                                   `${ activeTab === tabCard.title ? 'tablinks' : 'tablinks'} ${ activeTab === tabCard.title ? 'active' : 'npne'}`
+                                }
                                 onClick={() => openItem(tabCard.title)}>
                                 <span className='tab-header__item'>
                                     <span className="tab-text">{tabCard.title}</span>
@@ -48,7 +51,7 @@ const Item = () => {
                             <h2 className='tab-card-col-header'><span>{tabCard.header}</span></h2>
                             <p className='tab-card-col-des'>{tabCard.description}</p>
                             <div className="explore_icon">
-                                <span style={{ paddingRight: '10px' }}>Explore {tabCard.title.slice(0, 10)+'....'}</span>
+                                <span style={{ paddingRight: '10px' }}>Explore {tabCard.title.slice(0, 10) + '....'}</span>
                                 <FaArrowRight className='fa' />
                             </div>
                         </div>

@@ -44,7 +44,7 @@ const Blog = () => {
     fetchBlogs();
   }, []);
   if(isLoading){
-    return <p>Loading is here hahaha</p>
+    return <p>Loading is here</p>
   }
   return (
     <div className='blog'>

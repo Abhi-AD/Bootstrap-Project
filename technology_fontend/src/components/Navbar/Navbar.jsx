@@ -29,7 +29,16 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu
      });
 
      const node = useRef();
+     const [tabCards, setTabCards] = useState([]);
 
+     useEffect(() => {
+          fetch('http://127.0.0.1:8000/api/visit/tabcard/')
+               .then(response => response.json())
+               .then(data => {
+                    setTabCards(data);
+               })
+               .catch(error => console.error('Error fetching tab cards:', error));
+     }, []);
      return (
           <>
                <ul className="header-list">
@@ -40,32 +49,14 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu
                          <span className='navbar-link'>Service</span>
                          {isServiceOpen && (
                               <div className={`header_dropdown`} ref={node}>
-                                   <Link className='header-sublist' to={`/service`} onClick={handleNavLinkClick}>
-                                        <PiRectangleThin className='header-icon' />
-                                        <p className="header__dropdown-title">Products & Technology</p>
-                                        <p className="header__dropdown-des">From concept to completion, the design and delivery of technology and products</p>
-                                   </Link>
-                                   <Link className='header-sublist' onClick={handleNavLinkClick}>
-                                        <PiRectangleThin className='header-icon' />
-                                        <p className="header__dropdown-title">Team Augmentation</p>
-                                        <p className="header__dropdown-des">A custom-built group of developers and designers, fine-tuned for delivery</p>
-                                   </Link>
-                                   <Link className='header-sublist' onClick={handleNavLinkClick}>
-                                        <PiRectangleThin className='header-icon' />
-                                        <p className="header__dropdown-title">Design</p>
-                                        <p className="header__dropdown-des">Bring your product vision to life with UI/UX design, prototypes, and videos</p>
-                                   </Link>
-                                   <Link className='header-sublist' onClick={handleNavLinkClick}>
-                                        <PiRectangleThin className='header-icon' />
-                                        <p className="header__dropdown-title">Data & AI</p>
-                                        <p className="header__dropdown-des">Smarter apps and better decisions with data engineering, analytics, ML, and LLM</p>
-                                   </Link>
-                                   <Link className='header-sublist' onClick={handleNavLinkClick}>
-                                        <PiRectangleThin className='header-icon' />
-                                        <p className="header__dropdown-title">DevOps & Cloud</p>
-                                        <p className="header__dropdown-des">Cloud-based solutions for world-class security, scalability and cost-effectiveness</p>
-                                   </Link>
+                                   {tabCards.map((tabCard, index) => (
+                                        <Link key={index} className='header-sublist' to={`/service/${tabCard.id}`} onClick={handleNavLinkClick}>
+                                             <p className="header__dropdown-title">{tabCard.title}</p>
+                                             <p className="header__dropdown-des">{tabCard.header.slice(0, 90) + '....'}</p>
+                                        </Link>
+                                   ))}
                               </div>
+
                          )}
                     </li>
                     <li key="join" onClick={() => toggleJoin(!isJoinOpen)}>

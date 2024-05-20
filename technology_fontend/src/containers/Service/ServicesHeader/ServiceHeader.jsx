@@ -2,12 +2,11 @@ import React from 'react'
 import './ServiceHeader.css'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa';
-import serviceheader from '../../../assests/img/Service/serviceheader.png'
-const ServiceHeader = () => {
+const ServiceHeader = ({post}) => {
      return (
           <div className='services-header'>
                <div className="services-header-col">
-                    <h1 className="services-header-col-title">products & technology</h1>
+                    <h1 className="services-header-col-title">{post?.title ?? "N/A"}</h1>
                     <p className="services-header-col-header">
                          <span>Innvoation </span><br />
                          Reliably<br /> delivered.
@@ -25,7 +24,7 @@ const ServiceHeader = () => {
                     </div>
                </div>
                <div className="services-header-col">
-                    <img src={serviceheader} alt="serviceheader" className='serviceheader' />
+                    <img src={post.image} alt={post.title} className='serviceheader' />
                </div>
           </div>
      )
