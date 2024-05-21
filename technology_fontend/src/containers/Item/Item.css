@@ -41,16 +41,10 @@
      font-size: 30px;
 }
 
-.tab-item:active,
-.tab-item:focus,
-.tab-item:hover {
-     color: var(--color-bg);
-     background-color: var(--color-footer);
-}
 
-.active {
+.tabactive {
      color: var(--color-bg);
-     background-color: var(--color-footer);
+     background-color: var(--hover-color);
      padding-left: 2rem;
      padding-top: 3rem;
      padding-bottom: 3rem;
@@ -82,13 +76,12 @@
 
 
 
-
 .tab-card {
      padding: 1rem 1rem;
      display: flex;
      color: var(--color-bg);
      justify-content: center;
-     background-color: var(--color-footer);
+     background-color: var(--hover-color);
 }
 
 .tab-card-col-left {
@@ -103,6 +96,7 @@
      margin-bottom: 0;
      text-transform: uppercase;
      font-weight: 700;
+     color: var(--bg-color);
 }
 
 .tab-card-col-header {
@@ -114,7 +108,7 @@
 }
 
 .tab-card-col-header span {
-     color: var(--main-color);
+     color: var(--color-text);
 }
 
 .tab-card-col-des {

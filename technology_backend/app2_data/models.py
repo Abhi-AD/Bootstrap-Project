@@ -36,19 +36,7 @@ class Blog(models.Model):
 
     def get_absolute_url(self):
         return reverse("blog_detail", args=[str(self.id)])
-    
-    def save(self, *args, **kwargs):
-        if self.pk:
-            try:
-                existing_instance = Blog.objects.get(pk=self.pk)
-                if existing_instance.image and existing_instance.image != self.image:
-                    existing_instance.image.delete(save=False)
-            except Blog.DoesNotExist:
-                pass
-        if self.image:
-            self.rename_image()
 
-        super(Blog, self).save(*args, **kwargs)
 
     def rename_image(self):
         extension = os.path.splitext(self.image.name)[1]
@@ -229,23 +217,11 @@ class CaseStudy(models.Model):
     def __str__(self):
         return f'{self.case_study_title}'
     
-    def save(self, *args, **kwargs):
-        if self.pk:
-            try:
-                existing_instance = CaseStudy.objects.get(pk=self.pk)
-                if existing_instance.case_study_image and existing_instance.case_study_image != self.case_study_image:
-                    existing_instance.case_study_image.delete(save=False)
-            except CaseStudy.DoesNotExist:
-                pass
-        if self.case_study_image:
-            self.rename_image()
-
-        super(CaseStudy, self).save(*args, **kwargs)
-
     def rename_image(self):
         extension = os.path.splitext(self.case_study_image.name)[1]
         filename = f"{self.pk}{extension}"
         self.case_study_image.name = os.path.join(filename)
+        self.save()
 
 
 
@@ -254,23 +230,24 @@ class TabCard(models.Model):
     title = models.CharField(max_length=255, unique=True)
     header = models.CharField(max_length=255,)
     description = models.TextField()
+    description1 = models.TextField()
     image = models.ImageField(upload_to='product_images/')
 
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
-        if self.pk:
-            try:
-                existing_instance = TabCard.objects.get(pk=self.pk)
-                if existing_instance.image and existing_instance.image != self.image:
-                    existing_instance.image.delete(save=False)
-            except TabCard.DoesNotExist:
-                pass
-        if self.image:
-            self.rename_image()
+    # def save(self, *args, **kwargs):
+    #     if self.pk:
+    #         try:
+    #             existing_instance = TabCard.objects.get(pk=self.pk)
+    #             if existing_instance.image and existing_instance.image != self.image:
+    #                 existing_instance.image.delete(save=False)
+    #         except TabCard.DoesNotExist:
+    #             pass
+    #     if self.image:
+    #         self.rename_image()
 
-        super(TabCard, self).save(*args, **kwargs)  # Corrected from super(CaseStudy, self)
+    #     super(TabCard, self).save(*args, **kwargs)  # Corrected from super(CaseStudy, self)
 
     def rename_image(self):
         extension = os.path.splitext(self.image.name)[1]

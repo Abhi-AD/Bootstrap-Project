@@ -9,14 +9,14 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 const Blog = () => {
   const [latestBlogs, setLatestBlogs] = useState([]);
-  const [category, setCategory] = useState([]);
+  // const [category, setCategory] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const baseUrl = "http://127.0.0.1:8000"
 
   const fetchedCatgories = async() =>{
     try {
       const responseAll = await axios.get(`${baseUrl}/api/visit/category/`);
-      setCategory(responseAll.data)
+      // setCategory(responseAll.data)
       return responseAll.data;
     } catch (error) {
       console.error('Error fetching blogs:', error);
@@ -53,7 +53,7 @@ const Blog = () => {
         <h1 className='title_blog'>Blog insights</h1>
         <div className="row_blog ">
           {latestBlogs.map((blog,index) =>{
-            const matchedCategory = category?.find((category,index) => category.id === blog.category)
+            // const matchedCategory = category?.find((category,index) => category.id === blog.category)
             return (
                 <div className="BlogHeader" key={index}>
                 <img src={blog.image} alt="BlogHeader" className='js-scroll fade-in' />
@@ -61,7 +61,7 @@ const Blog = () => {
                   <div className="post_date"><span>{dateFormate(blog.post_date)}</span></div>
                   <h2 className="blog_title">{blog.title}</h2>
                   <p className='blog_des'>{blog.bio.slice(0, 150)+'....'}</p>
-                  <p className='blog_des'>Category:{matchedCategory?.name} </p>
+                  {/* <p className='blog_des'>Category:{matchedCategory?.id} </p> */}
                   <Link className="read_more" to={`/blog/${blog.id}`}>
                     <span style={{ paddingRight: '10px' }}>Read more</span>
                     <FaArrowRight className='fa' />

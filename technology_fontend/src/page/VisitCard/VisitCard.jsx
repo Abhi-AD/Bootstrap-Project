@@ -42,8 +42,8 @@ const VisitCard = () => {
      };
 
      const generateQRCode = (data) => {
-          const { name,post, email, phone, website, address_line_1, address_line_2 } = data;
-          const qrDataString = `Name: ${name}\nPost: ${post}\nEmail: ${email}\nPhone: ${phone}\nWebsite: ${website}\nAddress1: ${address_line_1}\nAddress2: ${address_line_2}`;
+          const {website} = data;
+          const qrDataString = `Website: ${website}`;
           setFormData({ ...data, showQR: true, qrData: qrDataString });
      };
 

@@ -52,12 +52,12 @@ class BlogView(viewsets.ModelViewSet):
     serializer_class = BlogSerializer
     queryset = Blog.objects.all().order_by("-post_date")
     
-    # def retrieve(self, request, *args, **kwargs):
-    #     instance = self.get_object()
-    #     instance.views_count += 1
-    #     instance.save(update_fields=['views_count'])
-    #     serializer = self.get_serializer(instance)
-    #     return Response(serializer.data)
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.views_count += 1
+        instance.save(update_fields=['views_count'])
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
 
 
 class CategoryView(viewsets.ModelViewSet):
@@ -103,12 +103,12 @@ class CaseStudyView(viewsets.ModelViewSet):
     serializer_class = CaseStudySerializer
     queryset = CaseStudy.objects.all().order_by("-post_date")
     
-    # def retrieve(self, request, *args, **kwargs):
-    #     instance = self.get_object()
-    #     instance.views_count += 1
-    #     instance.save()
-    #     serializer = self.get_serializer(instance)
-    #     return Response(serializer.data)
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.views_count += 1
+        instance.save()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
 
 # class TabCardView(viewsets.ModelViewSet):
 #     serializer_class = TabCardSerializer

@@ -23,14 +23,14 @@
 }
 .gradient__text{
   margin-bottom: 10px;
-  color: var(--hover-color);
+  color: var(--color-text);
 }
 .technology__header-content .span1 {
   color: var(--main-color);
 }
 
 .technology__header-content .span2 {
-  color: green;
+  color: var(--hover-color);
 }
 
 .technology__header-content p {

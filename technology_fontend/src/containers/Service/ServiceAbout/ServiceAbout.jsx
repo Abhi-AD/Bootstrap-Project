@@ -15,7 +15,7 @@ const ServiceAbout = () => {
                     <p className="service-about-col-des1">Launching new tech is always hard, but it can at least be straightforward. We prioritize adaptability over lock-in, transparency, and consistent delivery and feedback. We make sure that at all times we have a shared understanding of where we're going, how far we are, what's in our way, and how we're doing.</p>
                     <p className='"service-about-col-des2'>We excel in crafting various AI solutions. Collaborating with us ensures top-tier quality and unwavering commitment to deliver the best.</p>
                     <div className='about-button'>
-                         <Link className='about-box' to={`/case-study-details`}>
+                         <Link className='about-box'>
                               <span>get in touch</span>
                               <FaArrowRight />
                          </Link>

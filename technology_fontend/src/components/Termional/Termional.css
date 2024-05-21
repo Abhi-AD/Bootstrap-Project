@@ -2,14 +2,14 @@
     position: relative;
     max-width: 50%;
     margin: auto;
-    gap: 10rem;
+    gap: 1rem;
 }
 
 
 .termional {
     display: flex;
     flex: 1;
-    gap: 10rem;
+    gap: 100rem;
 }
 
 
@@ -61,7 +61,7 @@
 
 
 .dot.active {
-    background-color: #b01a1a;
+    background-color: var(--main-color);
     /* Add other styling as needed */
 }
 

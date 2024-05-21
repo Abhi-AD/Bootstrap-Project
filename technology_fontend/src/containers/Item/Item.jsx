@@ -32,7 +32,7 @@ const Item = () => {
                         <li key={tabCard.id} className='tab-item'>
                             <Link
                                 className={
-                                   `${ activeTab === tabCard.title ? 'tablinks' : 'tablinks'} ${ activeTab === tabCard.title ? 'active' : 'npne'}`
+                                   `${ activeTab === tabCard.title ? 'tablinks' : 'tablinks'} ${ activeTab === tabCard.title ? 'tabactive' : 'none'}`
                                 }
                                 onClick={() => openItem(tabCard.title)}>
                                 <span className='tab-header__item'>
@@ -50,10 +50,10 @@ const Item = () => {
                             <span className='tab-card-col-title'>{tabCard.title}</span>
                             <h2 className='tab-card-col-header'><span>{tabCard.header}</span></h2>
                             <p className='tab-card-col-des'>{tabCard.description}</p>
-                            <div className="explore_icon">
+                            <Link className="explore_icon" to={`/service/${tabCard.id}`}>
                                 <span style={{ paddingRight: '10px' }}>Explore {tabCard.title.slice(0, 10) + '....'}</span>
                                 <FaArrowRight className='fa' />
-                            </div>
+                            </Link>
                         </div>
                         <div className="tab-card-col-right">
                             <img src={tabCard.image} alt="product" />

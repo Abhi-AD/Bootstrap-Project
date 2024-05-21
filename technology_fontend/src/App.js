@@ -6,6 +6,7 @@ import './App.css'
 
 import { ApplyForm, Casestudy, CasestudyDetails, Current } from './containers/index'
 import CardDesign from './page/VisitCard/CardDesign'
+import Porfolio from './page/Portfolio/Porfolio'
 
 const App = () => {
      useEffect(() => {
@@ -57,6 +58,7 @@ const App = () => {
                     <Route path='/apply-form/:id' element={<ApplyForm />} />
                     <Route path='/card' element={<CardDesign />} />
                     <Route path='/job' element={<Current />} />
+                    <Route path='/portfolio' element={<Porfolio />} />
                </Routes>
                <Footer />
           </Router>

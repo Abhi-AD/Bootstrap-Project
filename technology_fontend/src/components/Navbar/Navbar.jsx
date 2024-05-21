@@ -52,7 +52,7 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu
                                    {tabCards.map((tabCard, index) => (
                                         <Link key={index} className='header-sublist' to={`/service/${tabCard.id}`} onClick={handleNavLinkClick}>
                                              <p className="header__dropdown-title">{tabCard.title}</p>
-                                             <p className="header__dropdown-des">{tabCard.header.slice(0, 90) + '....'}</p>
+                                             <p className="header__dropdown-des">{tabCard.description1.slice(0, 100) + '....'}</p>
                                         </Link>
                                    ))}
                               </div>

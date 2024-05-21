@@ -44,7 +44,7 @@ const CardDesign = (props) => {
               <p>+977 {phone || '98 2294156'}</p>
             </div>
             <div className="emailId">
-              <p className="web">{website || 'www.yourwebsite.com'}</p>
+              <p className="web">{website.slice(0, 25) || 'www.yourwebsite.com'}</p>
               <p className="email">{email || 'dangiabhi332@gmail.com'}</p>
             </div>
           </div>

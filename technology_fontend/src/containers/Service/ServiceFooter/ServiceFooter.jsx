@@ -10,7 +10,7 @@ const ServiceFooter = () => {
                     <h2 className="service-footer-col-header">Join forces with your customers to build defensible products.</h2>
                     <p className='service-footer-col-desc1'>The success of your product lies in the hands of your target users. So, why leave them out of your product development journey?</p>
                     <div className='case-card-button'>
-                         <Link className='case-card-box' to={`/service`}>
+                         <Link className='case-card-box'>
                               <span>get in touch</span>
                               <FaArrowRight />
                          </Link>
