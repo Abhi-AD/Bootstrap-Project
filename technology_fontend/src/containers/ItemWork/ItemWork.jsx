@@ -39,10 +39,6 @@ function ItemWork() {
     const tabContentsData = [
         { id: 'Daily work support', contents: [
             { icon: <MdEmojiEmotions fontSize={30} />, title: 'Hybrid work', desc: 'Flexibility to work from office or home.' },
-            { icon: <MdEmojiEmotions fontSize={30} />, title: 'Hybrid work', desc: 'Flexibility to work from office or home.' },
-            { icon: <MdEmojiEmotions fontSize={30} />, title: 'Hybrid work', desc: 'Flexibility to work from office or home.' },
-            { icon: <MdEmojiEmotions fontSize={30} />, title: 'Hybrid work', desc: 'Flexibility to work from office or home.' },
-            { icon: <MdEmojiEmotions fontSize={30} />, title: 'Hybrid work', desc: 'Flexibility to work from office or home.' },
             { icon: <MdCrueltyFree fontSize={30} />, title: 'Support for resources', desc: 'Get internet and laptop allowance monthly, and request resources for convenient WFH.' },
             { icon: <FaMattressPillow fontSize={30} />, title: '5-days workweek', desc: 'Take the weekend off and come back refreshed on Monday.' },
             { icon: <MdOutlineCelebration fontSize={30} />, title: 'Free food', desc: 'Value and celebrate small and big wins together' }

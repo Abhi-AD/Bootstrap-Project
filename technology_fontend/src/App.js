@@ -57,7 +57,7 @@ const App = () => {
                 <Route path='/apply-form/:id' element={<ApplyForm />} />
                 <Route path='/card' element={<CardDesign />} />
                 <Route path='/job' element={<Current />} />
-                <Route path='/portfolio' element={<Portfolio />} />
+                <Route path='/portfolio/:id' element={<Portfolio />} />
                 <Route path='/book/:id' element={<CTADes />} />
             </Routes>
             <Footer />

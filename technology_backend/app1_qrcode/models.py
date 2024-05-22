@@ -8,6 +8,7 @@ class VisitCardOrder(models.Model):
     website = models.URLField()
     address_line_1 = models.CharField(max_length=255)
     address_line_2 = models.CharField(max_length=255, blank=True)
+    post_date = models.DateTimeField(auto_created=True)
 
     def __str__(self):
         return self.name  
