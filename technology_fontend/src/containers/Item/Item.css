@@ -44,7 +44,7 @@
 
 .tabactive {
      color: var(--color-bg);
-     background-color: var(--hover-color);
+     background-color: var( --linkdin-color);
      padding-left: 2rem;
      padding-top: 3rem;
      padding-bottom: 3rem;
@@ -81,7 +81,7 @@
      display: flex;
      color: var(--color-bg);
      justify-content: center;
-     background-color: var(--hover-color);
+     background-color: var( --linkdin-color);
 }
 
 .tab-card-col-left {

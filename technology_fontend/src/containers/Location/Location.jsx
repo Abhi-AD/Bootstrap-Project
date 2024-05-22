@@ -23,7 +23,7 @@ const Location = () => {
                <div className="location_grid">
                     {locations.map((location,index) => (
                          <div className="col_location" key={index}>
-                              <img src={location.image} alt="Seattle" />
+                              <img src={location.image} alt={location.name} className='js-scroll fade-in fade-in-bottom' />
                               <div className="post-card_location">
                                    <h3>{location.name}</h3>
                                    <p>{location.address} {location.city}, {location.country}</p>

@@ -27,20 +27,24 @@ const CaseStudyHeader = () => {
                     <h1>{casestudy.case_study_title}</h1>
                     <div className="casestudeyheader">
                         <div className="casestudeyheadercol">
-                            <p className='casestudeyheadercol-header'>{casestudy.case_study_bio}</p>
-                            <p className="casestudeyheadercol-desc">{casestudy.case_study_description}</p>
+                            <p className='casestudeyheadercol-header'>{casestudy?.case_study_bio ?? "N/A"}</p>
+                            <p className="casestudeyheadercol-desc">{casestudy?.case_study_description ?? "N/A"}</p>
                             <div className="casestudeyheadercol-footer">
-                                <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Fcity_of_seattle_d8b50286e8.png&w=256&q=75" alt="caselogo1" />
-                                <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Flogo_signetic_0ca3d23a1e.png&w=256&q=75" alt="caselogo2" />
+                                {/* <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Fcity_of_seattle_d8b50286e8.png&w=256&q=75" alt="caselogo1" className='casestudeyheadercol-footer-img' />
+                                <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Flogo_signetic_0ca3d23a1e.png&w=256&q=75" alt="caselogo2" className='casestudeyheadercol-footer-img' /> */}
+                            <h2 style={{
+                                marginRight:'10px'
+                            }}>ABC</h2>
+                            <h2>XYZ</h2>
                             </div>
                         </div>
-                        <div className="casestudeyheadercol">
-                            <img className='casestudeyheadercolimg' src={casestudy.case_study_image} alt="caseheder" />
+                        <div className="casestudeyheadercol ">
+                            <img className='casestudeyheadercolimg' src={casestudy?.case_study_image?? "N/A"} alt="caseheder" />
                         </div>
                     </div>
 
                     <div className="casestudydetails-header-footer">
-                        <div className="casestudydetails-header-footer-col">
+                        <div className="casestudydetails-header-footer-col js-scroll fade-in fade-in-bottom">
                             <img src="https://img.freepik.com/free-vector/case-study-flyer-template_23-2149131023.jpg?t=st=1713783154~exp=1713786754~hmac=b3262f0871c81882440431b3898375722e612e70a7d53ca687cf72a551bbca03&w=900" alt="img" />
                         </div>
                         <div className="casestudydetails-header-footer-col">

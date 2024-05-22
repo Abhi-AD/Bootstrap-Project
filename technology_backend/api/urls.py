@@ -21,6 +21,7 @@ router.register(r'contact', views.ContactFormSubmissionView, 'contact')
 router.register(r'casestudy', views.CaseStudyView, 'casestudy')
 router.register(r'jobapplicationform1', views.JobApplicationView, 'jobapplicationform')
 router.register(r'tabcard', views.TabCardView, 'tabcard')
+router.register(r'question', views.QuestionView, 'question')
 
 urlpatterns = [
     path('visit/', include(router.urls)),

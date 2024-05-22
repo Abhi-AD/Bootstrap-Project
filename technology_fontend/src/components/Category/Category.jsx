@@ -38,9 +38,12 @@ const Category = () => {
           </li>
           {categories.map((category) => (
             <li key={category.id} className="category-header_item">
-              <Link to={`/${category.name ? category.name.toLowerCase() : ''}`}>
+              {/* <Link to={`/${category.name ? category.name.toLowerCase() : ''}`}>
                 {category.name}
-              </Link>
+              </Link> */}
+              <div>
+                {category.name}
+              </div>
             </li>
           ))}
         </ul>

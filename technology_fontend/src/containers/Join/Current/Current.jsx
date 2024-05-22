@@ -56,7 +56,7 @@ const Current = () => {
                 </div>
                 {peoples.map(people => (
                     <div className="person-detail">
-                        <img src={people.image} alt="img" />
+                        <img src={people.image} alt="img" className='js-scroll fade-in fade-in-bottom' />
                         <div className="person-detail-des">
                             <h3>{people.name}</h3>
                             <p>{people.post}</p>

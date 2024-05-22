@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ServiceAbout, ServiceFooter, ServiceHeader, ServiceInnovation, ServiceWork } from '../../containers/index'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Termional } from '../../components';
 
 const Services = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const Services = () => {
   return (
     <div>
       <ServiceHeader post={post}/>
+      <Termional />
       <ServiceInnovation />
       <ServiceWork />
       <ServiceAbout />

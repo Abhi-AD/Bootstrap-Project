@@ -7,7 +7,7 @@
     opacity: 1;
 }
 
-.scrolled.fade-in {
+.scrolled .fade-in {
     animation: fade-in 1s ease both; /* Shortened animation duration to 1s */
 }
 

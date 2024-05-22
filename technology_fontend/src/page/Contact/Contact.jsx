@@ -89,7 +89,7 @@ const Contact = () => {
 
         <div className="contact_form">
           <div className="contact_form-left">
-            <img src={contact} alt="contact" className='js-scroll fade-in' />
+            <img src={contact} alt="contact" className='js-scroll fade-in fade-in-bottom' />
             <div className="vacancy">
               <h2 className='vacancy_title'>Looking for a job?</h2>
               <p className="vacancy_desc">There is always an exciting position open that you can apply right away. Don't worry even if there's not something that suits you imme</p>

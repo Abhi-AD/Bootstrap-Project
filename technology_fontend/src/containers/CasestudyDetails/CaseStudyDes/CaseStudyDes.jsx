@@ -14,29 +14,29 @@ const CaseStudyDes = () => {
                </div>
 
                <div className="case-study-card">
-                    <div className="case-study-card-col">
-                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col-img' />
+                    <div className="case-study-card-col js-scroll fade-in fade-in-bottom">
+                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col js-scroll fade-in fade-in-bottom-img' />
                          <div className="case-study-card-info">
                               <h3 className='case-study-card-info-title'>Manager Portal</h3>
                               <p className="case-study-card-info-desc">Managers can set up schedules for immunization, vaccine code setup, organize content as well as manage IIS and state reporting.</p>
                          </div>
                     </div>
-                    <div className="case-study-card-col">
-                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col-img' />
+                    <div className="case-study-card-col js-scroll fade-in fade-in-bottom">
+                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col js-scroll fade-in fade-in-bottom-img' />
                          <div className="case-study-card-info">
                               <h3 className='case-study-card-info-title'>Manager Portal</h3>
                               <p className="case-study-card-info-desc">Managers can set up schedules for immunization, vaccine code setup, organize content as well as manage IIS and state reporting.</p>
                          </div>
                     </div>
-                    <div className="case-study-card-col">
-                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col-img' />
+                    <div className="case-study-card-col js-scroll fade-in fade-in-bottom">
+                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col js-scroll fade-in fade-in-bottom-img' />
                          <div className="case-study-card-info">
                               <h3 className='case-study-card-info-title'>Manager Portal</h3>
                               <p className="case-study-card-info-desc">Managers can set up schedules for immunization, vaccine code setup, organize content as well as manage IIS and state reporting.</p>
                          </div>
                     </div>
-                    <div className="case-study-card-col">
-                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col-img' />
+                    <div className="case-study-card-col js-scroll fade-in fade-in-bottom">
+                         <img src="https://img.freepik.com/free-vector/office-work-man-sitting-table-working-laptop-data-processing-bank-employee_39422-748.jpg?t=st=1713787928~exp=1713791528~hmac=e8ee155ab91b4f65f9fdc93a3b7840f060ca614a6ba847d43369b5c686590a5d&w=826" alt="card1" className='case-study-card-col js-scroll fade-in fade-in-bottom-img' />
                          <div className="case-study-card-info">
                               <h3 className='case-study-card-info-title'>Manager Portal</h3>
                               <p className="case-study-card-info-desc">Managers can set up schedules for immunization, vaccine code setup, organize content as well as manage IIS and state reporting.</p>
@@ -47,7 +47,7 @@ const CaseStudyDes = () => {
 
 
 
-               <div className="case-study-footer">
+               <div className="case-study-footer js-scroll fade-in fade-in-bottom">
                     <div className="case-study-footer-row">
                          <div className="case-study-footer-col">
                               <img src="https://img.freepik.com/free-photo/business-people-dining-restaurant_53876-46892.jpg?t=st=1713786800~exp=1713790400~hmac=ff2ba9bf502004293640552d1c649ceee92a139ccb0064a85b7b508cef22a348&w=900" alt="" />

@@ -10,7 +10,8 @@ from app2_data.models import (
     JobApplicationStep,
     Job_Vacancy,
     CaseStudy,
-    TabCard
+    TabCard,
+    Question,
 )
 from app3_user.models import (
     Subscriber,
@@ -124,4 +125,9 @@ class CaseStudySerializer(serializers.ModelSerializer):
 class JobApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = JobApplication
+        fields = "__all__"
+
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Question
         fields = "__all__"

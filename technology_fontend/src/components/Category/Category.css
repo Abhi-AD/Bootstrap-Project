@@ -8,7 +8,9 @@
      display: flex;
      align-items: center;
 }
-
+.category-header_list li Link:hover{
+     background-color: #007bff;
+}
 
 
 /* header */

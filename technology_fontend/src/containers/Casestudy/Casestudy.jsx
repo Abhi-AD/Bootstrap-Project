@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Casestudy.css'
 import { FaArrowRight } from 'react-icons/fa';
-import Signetic_title from '../../assests/img/CaseStudy/Signetic_title.png'
+// import Signetic_title from '../../assests/img/CaseStudy/Signetic_title.png'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 const Casestudy = () => {
@@ -27,9 +27,10 @@ const Casestudy = () => {
                <div className="col_case">
                     {casestudy.map(casestudy => (
                          <Link className="card_case" to={`/case-study-details/${casestudy.id}`}>
-                              <img src={casestudy.case_study_image} alt="Signetic1" />
+                              <img src={casestudy.case_study_image} alt="Signetic1" className='js-scroll fade-in fade-in-bottom' />
                               <div className="casestudy-card">
-                                   <img src={Signetic_title} alt="Signetic_title" />
+                                   {/* <img src={Signetic_title} alt="Signetic_title" /> */}
+                                   <h1>ABC</h1>
                                    <h3>{casestudy.case_study_title.slice(0,50)+'....'}</h3>
                                    <p>{casestudy.case_study_bio.slice(0, 200)+'....'}</p>
                                    <div className='case-card-button'>

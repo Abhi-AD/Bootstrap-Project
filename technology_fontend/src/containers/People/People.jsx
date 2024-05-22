@@ -28,7 +28,7 @@ const People = () => {
                <div className="team ">
                     {peoples.map(people => (
                          <div className="people_card" >
-                              <img src={people.image}alt={people.name} />
+                              <img src={people.image}alt={people.name} className='js-scroll fade-in fade-in-bottom' />
                               <div className="team__infos">
                                    <h3>{people.name} </h3>
                                    <span>{people.post} </span>

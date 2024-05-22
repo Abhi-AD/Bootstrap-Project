@@ -56,7 +56,7 @@ const Blog = () => {
             // const matchedCategory = category?.find((category,index) => category.id === blog.category)
             return (
                 <div className="BlogHeader" key={index}>
-                <img src={blog.image} alt="BlogHeader" className='js-scroll fade-in' />
+                <img src={blog.image} alt="BlogHeader" className='js-scroll fade-in fade-in-bottom' />
                 <div className="post_card__infoys">
                   <div className="post_date"><span>{dateFormate(blog.post_date)}</span></div>
                   <h2 className="blog_title">{blog.title}</h2>
@@ -74,8 +74,7 @@ const Blog = () => {
         <div className="col_blog">
           {blogs.map((blog,index) => (
             <div className="card_blog" key={index}>
-              {/* animation_class"js-scroll fade-in" */}
-              <img src={blog.image} alt="Blog1" className=' ' />
+              <img src={blog.image} alt="Blog1" className='js-scroll fade-in fade-in-bottom ' />
               <div className="post_card__infoys">
                 <div className="post_date"><span>{dateFormate(blog.post_date)}</span></div>
                 <h2 className="blog_title">{blog.title}</h2>

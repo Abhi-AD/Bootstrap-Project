@@ -4,7 +4,7 @@ import mission from '../../assests/img/mission.png';
 const Mission = () => {
      return (
           <div className='mission'>
-               <div className="mission-col js-scroll fade-in">
+               <div className="mission-col js-scroll fade-in fade-in-bottom">
                     <img src={mission} alt="mission1" />
                </div>
                <div className="mission-col">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Current, JoinApplication, JoinHeader, JoinService, Start } from '../../containers/index'
+import { Current, ItemWork, JoinApplication, JoinHeader, JoinService, Start } from '../../containers/index'
 import { Connect, Gallery } from '../../components/index'
 
 const Join = () => {
@@ -9,6 +9,7 @@ const Join = () => {
       <Start />
       <JoinService />
       <Gallery />
+      <ItemWork/>
       <Current />
       <JoinApplication />
       <Connect/>

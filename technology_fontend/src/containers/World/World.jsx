@@ -7,7 +7,7 @@ import Images from '../../assests/img/world.png';
 
 const World = () => {
      return (
-          <div className='world about_padding'>
+          <div className='world about_padding js-scroll fade-in fade-in-bottom'>
                <img src={Images} alt="world1" />
                <div className="world_card">
                     <FaGlobe className='world_card-icon' />

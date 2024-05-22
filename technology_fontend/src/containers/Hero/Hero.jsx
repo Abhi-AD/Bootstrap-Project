@@ -14,7 +14,7 @@ const Hero = () => {
                     <p className="about-des2">Leapfrog, formed by a team of seasoned founders, CTOs, product designers, and engineers, has grown to a workforce of 450 strong. Over the past decade, we've been instrumental in delivering over a 100 new products. We've forged partnerships with a wide variety of innovative startups and enterprises, building solutions that needed to blend a user-friendly interface with the intricate aspects of data, cloud, and security.</p>
                     <Link to="/contact" className='about-link'><span>Build With us</span><FaArrowRight /></Link>
                </div>
-               <div className="col-about">
+               <div className="col-about js-scroll fade-in fade-in-bottom">
                     <img src={aboutImage} alt="aboutpic" />
                </div>
           </div>

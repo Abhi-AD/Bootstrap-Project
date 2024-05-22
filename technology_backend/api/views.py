@@ -18,7 +18,8 @@ from api.serializers import (
     ContactFormSubmissionSerializer,
     CaseStudySerializer,
     JobApplicationSerializer,
-    TabCardSerializer
+    TabCardSerializer,
+    QuestionSerializer,
 )
 
 from app1_qrcode.models import VisitCardOrder
@@ -33,6 +34,7 @@ from app2_data.models import (
     Job_Vacancy,
     CaseStudy,
     TabCard,
+    Question,
 )
 from app3_user.models import (
     Subscriber,
@@ -73,6 +75,18 @@ class TagView(viewsets.ModelViewSet):
 class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     queryset = Book.objects.all().order_by("-post_date")
+    
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.views_count += 1
+        instance.save(update_fields=['views_count'])
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+
+class QuestionView(viewsets.ModelViewSet):
+    serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
+
 
 
 class PersonView(viewsets.ModelViewSet):

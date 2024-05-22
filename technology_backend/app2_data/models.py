@@ -60,9 +60,9 @@ def validate_linkedin_url(value):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="Person/")
-    post = models.CharField(max_length=25)
+    post = models.CharField(max_length=100)
     post_date = models.DateTimeField(auto_now_add=True)
     bio = models.CharField(max_length=255)
     blog = models.TextField()
@@ -95,30 +95,15 @@ class Book(models.Model):
     chapter = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    description1 = models.TextField()
     image = models.ImageField(upload_to="Book/")
+    views_count = models.PositiveBigIntegerField(default=0)
     post_date = models.DateTimeField(auto_now_add=True)
     questions = models.ManyToManyField(Question, related_name="books", blank=True)
 
     def __str__(self):
         return self.title
     
-    def save(self, *args, **kwargs):
-        if self.pk:
-            try:
-                existing_instance = Book.objects.get(pk=self.pk)
-                if existing_instance.image and existing_instance.image != self.image:
-                    existing_instance.image.delete(save=False)
-            except Book.DoesNotExist:
-                pass
-        if self.image:
-            self.rename_image()
-
-        super(Book, self).save(*args, **kwargs)
-
-    def rename_image(self):
-        extension = os.path.splitext(self.image.name)[1]
-        filename = f"{self.pk}{extension}"
-        self.image.name = os.path.join(filename)
 
 
 
