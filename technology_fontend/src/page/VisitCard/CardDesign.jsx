@@ -7,9 +7,9 @@ import { saveAs } from 'file-saver';
 import QRCode from 'qrcode.react';
 
 const CardDesign = (props) => {
-  const { name,post, email, phone, website, address_line_1, address_line_2, qrData } = props?.formData
+  const { name, post, email, phone, website, address_line_1, address_line_2, qrData } = props?.formData
+  console.log(props)
   const cardRef = useRef(null);
-  const defaultAddress = '1/2 Street, City, State, Country';
   const handleDownload = () => {
     html2canvas(cardRef.current).then(canvas => {
       canvas.toBlob(blob => {
@@ -26,26 +26,23 @@ const CardDesign = (props) => {
         <div className="front-side">
           <div className="info-grid">
             <div className="name">
-              <h2>{name || 'Abhishek Dangi'}</h2>
-              <h5>{post || 'Full Stack Developer'}</h5>
+              <h2>{name.slice(0, 15)}</h2>
+              <h5>{post}</h5>
             </div>
             <div className="addr">
               <p>
-                {address_line_2 ? (
-                  address_line_2
-                ) : (
-                  address_line_1 || defaultAddress
-                )}
+               {address_line_1}
+               {address_line_2}
               </p>
 
 
             </div>
             <div className="phoneNo">
-              <p>+977 {phone || '98 2294156'}</p>
+              <p>+977 {phone}</p>
             </div>
             <div className="emailId">
-              <p className="web">{website.slice(0, 25) || 'www.yourwebsite.com'}</p>
-              <p className="email">{email || 'dangiabhi332@gmail.com'}</p>
+              <p className="web">{website.slice(0, 25)}</p>
+              <p className="email">{email}</p>
             </div>
           </div>
         </div>

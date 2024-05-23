@@ -90,14 +90,14 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu
 const Button = () => (
      <>
           <div className="header-button">
-               <Link className='animation animation-contact' to={`/visiting-card`}>
+               <Link className='animation animation-card' to={`/visiting-card`}>
                     <div className="animation-icon">
                          <PiRectangleThin className='rectangle' />
                          <span className='animation-line'></span>
                     </div>
                     <span>Build with Card</span>
                </Link>
-               <Link className='animation animation-card' to={`/contact`}>
+               <Link className='animation animation-contact' to={`/contact`}>
                     <div className="animation-icon">
                          <PiRectangleThin className='rectangle' />
                          <span className='animation-line'></span>

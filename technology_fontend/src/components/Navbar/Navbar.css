@@ -122,19 +122,19 @@
      border-radius: 8px;
 }
 
-.animation-contact {
+.animation-card {
      background-color: var(--main-color-light);
 }
 
-.animation-card {
+.animation-contact {
      background-color: var(--color-blog);
 }
 
-.animation-contact:hover {
+.animation-card:hover {
      background-color: var(--navbar-contact);
 }
 
-.animation-card:hover {
+.animation-contact:hover {
      background-color: var(--navbar-card);
 }
 

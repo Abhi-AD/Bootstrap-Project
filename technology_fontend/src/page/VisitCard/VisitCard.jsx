@@ -4,48 +4,52 @@ import { useForm } from 'react-hook-form';
 import CardDesign from './CardDesign';
 import './VisitCard.css';
 import { visitCardSchema } from '../../schema/requirement';
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
 
 const VisitCard = () => {
-     const defaultValue = {
-          name: '',
-          email: '',
-          post: '',
-          phone: '',
-          website: '',
-          address_line_1: '',
-          address_line_2: '',
-          showQR: false,
-          qrData: ''
-     };
-     const [isSubmit, setIsSubmit] = useState(false);
-     const [formData, setFormData] = useState(defaultValue);
-     const { register, handleSubmit, reset, formState: { errors } } = useForm({
-          defaultValues: defaultValue,
-          resolver: yupResolver(visitCardSchema)
-     });
+    const defaultValue = {
+        name: '',
+        email: '',
+        post: '',
+        phone: '',
+        website: '',
+        address_line_1: '',
+        address_line_2: '',
+        showQR: false,
+        qrData: ''
+    };
 
-     const submitData = async (data) => {
-          try {
-               const response = await axios.post('http://127.0.0.1:8000/api/visit/visit/', data);
-               if (response.status === 201) {
-                    alert('Form submitted successfully!');
-                    setIsSubmit(true);
-                    generateQRCode(data);
-               } else {
-                    alert('Form submission failed!');
-               }
-          } catch (error) {
-               console.error('Error submitting form:', error);
-               alert('Form submission failed!');
-          }
-     };
+    const [isSubmit, setIsSubmit] = useState(false);
+    const [formData, setFormData] = useState(defaultValue);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        defaultValues: defaultValue,
+        resolver: yupResolver(visitCardSchema)
+    });
 
-     const generateQRCode = (data) => {
-          const {website} = data;
-          const qrDataString = `Website: ${website}`;
-          setFormData({ ...data, showQR: true, qrData: qrDataString });
-     };
+    const navigate = useNavigate();
+
+    const submitData = async (data) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/visit/visit/', data);
+            if (response.status === 201) {
+                alert('Form submitted successfully!');
+                setIsSubmit(true);
+                const id = response?.data?.id;
+                const qrDataString = `http://127.0.0.1:8000/api/visit/visit/${id}`;
+                setFormData({ ...data, id: id, showQR: true, qrData: qrDataString });
+            } else {
+                alert('Form submission failed!');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Form submission failed!');
+        }
+    };
+
+    const viewSubmittedData = () => {
+        navigate(`/portfolio/${formData.id}`, { state: { formData } });
+    };
 
      return (
           <div className='visit-card'>
@@ -72,11 +76,11 @@ const VisitCard = () => {
                               <div className="visit-card-field-input">
                                    <input
                                         type="text"
-                                        name="Post"
+                                        name="post"
                                         placeholder='Designation Name'
                                         {...register("post")}
                                    />
-                                   {errors.name && <p className='error-message'>{errors.post.message}</p>}
+                                   {errors.post && <p className='error-message'>{errors.post.message}</p>}
                               </div>
                          </li>
                          <li className="visit-card-forms-section-data">
@@ -137,10 +141,13 @@ const VisitCard = () => {
                          <li className="visit-card-forms-section-button">
                               <button type="submit">Submit Form</button>
                               <button type="button" onClick={() => reset(defaultValue)}>Clear Form</button>
+                              {isSubmit && <button type="button" onClick={viewSubmittedData}>View</button>}
                          </li>
                     </ul>
                </form>
-               <CardDesign formData={formData} isSubmit={isSubmit} />
+               {formData.showQR && (
+                    <CardDesign formData={formData} isSubmit={isSubmit} />
+               )}
           </div>
      );
 };
