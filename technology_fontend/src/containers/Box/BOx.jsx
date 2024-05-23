@@ -10,11 +10,11 @@ const BOx = () => {
                     <p className='box-container-des'>At Leapfrog, work is more than just work - it's a thrilling adventure filled with laughter, camaraderie, and endless support. Step into our world and witness the perfect blend of work and fun.</p>
                     <p className="box-container-footer">Step into our world and witness the perfect blend of work and fun.</p>
                     <div className="box-button">
-                         <Link className='link-box'>
+                         <Link className='link-box' to={`/about/`}>
                               <span>find out more</span>
                               <FaArrowRight />
                          </Link>
-                         <Link className='link-box'>
+                         <Link className='link-box' to={`/job/`}>
                               <span>See Open Jobs</span>
                               <FaArrowRight />
                          </Link>

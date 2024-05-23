@@ -38,7 +38,7 @@ const Contact = () => {
       try {
         const serviceAll = await axios.get(`${baseUrl}/api/visit/service/`);
         const engagementchoicesAll = await axios.get(`${baseUrl}/api/visit/engagementchoice/`);
-        const serviceData = serviceAll.data.slice(0, 4);
+        const serviceData = serviceAll.data.slice(0,10);
         const engagementchoicesData = engagementchoicesAll.data.slice(0, 4);
         setServices(serviceData)
         setEngagementChoices(engagementchoicesData)
@@ -82,8 +82,8 @@ const Contact = () => {
       <div className="contact">
         <div className="contact_header">
           <h1 className="contact_title">contact us</h1>
-          <p className="contact_des">Let's build  <span>together</span></p>
-          <p className="desc_contact">Whether you're a startup trying to launch a business or an enterprise looking to scale up, there's definitely something we can do for you.</p>
+          <p className="contact_des">Join us in  <span>Shaping</span></p>
+          <p className="desc_contact">Whether you're a new business aiming to kickstart operations or a large corporation seeking expansion, we have solutions tailored to meet your needs.</p>
         </div>
 
 
@@ -91,16 +91,16 @@ const Contact = () => {
           <div className="contact_form-left">
             <img src={contact} alt="contact" className='js-scroll fade-in fade-in-bottom' />
             <div className="vacancy">
-              <h2 className='vacancy_title'>Looking for a job?</h2>
-              <p className="vacancy_desc">There is always an exciting position open that you can apply right away. Don't worry even if there's not something that suits you imme</p>
+              <h2 className='vacancy_title'>Searching for employment?</h2>
+              <p className="vacancy_desc">Exciting roles are continuously emerging, ready for you to seize immediately. If you don't spot the ideal match right now, don't fret – we'll be sure to notify you as soon as new opportunities arise!</p>
               <Link className="apply_now" to={'/job'}>
                 <span style={{ paddingRight: '10px' }}>apply now</span>
                 <FaArrowRight className='fa' />
               </Link>
             </div>
             <div className="vacancy">
-              <h2 className='vacancy_title'>Get an internship</h2>
-              <p className="vacancy_desc">Check out our internship page and ways to get in touch if you’re looking to get an internship at Leapfrog.</p>
+              <h2 className='vacancy_title'>Secure an internship opportunity.</h2>
+              <p className="vacancy_desc">Explore our internship opportunities and find out how to reach out if you're interested in securing an internship position</p>
               <Link className="apply_now" to={'/job'}>
                 <span style={{ paddingRight: '10px' }}>become an intern</span>
                 <FaArrowRight className='fa' />
@@ -109,8 +109,8 @@ const Contact = () => {
           </div>
           <div className="contact_form-right">
             <div className="contact_form-right-header">
-              <h2 className='contact_form-right-title'>Simply fill out <span>this form</span></h2>
-              <p>We will promptly respond to your inquiry to discuss potential collaboration opportunities. You can expect to hear from us within two business days.</p>
+              <h2 className='contact_form-right-title'>Kindly complete <span>the form </span></h2>
+              <p>We'll swiftly get in touch to explore potential collaboration opportunities. Expect to hear from us within two business days.</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form__group">
@@ -128,8 +128,8 @@ const Contact = () => {
                 <p>We won't send you spam.</p>
               </div>
               <div className="form__group">
-                <label>How do you want to work with us?</label>
-                <p>We have more than one ways to engage.</p>
+                <label>How would you like to collaborate with us? </label>
+                <p>We offer various options for engagement.</p>
                 {engagementchoices.map((engagementchoice, index) => (
                   <button className="button__radio" type="button" key={index}>
                     <input

@@ -8,12 +8,19 @@ const JoinHeader = () => {
     <div className='join-header'>
       <div className="join-header-title">
         <h1 className='join-header-title-header'>careers</h1>
-        <p className='join-header-title-title'>Growth mindset. Curious. Innovative.<br /><span>Sounds like you?</span></p>
+        <p className='join-header-title-title'>Seeking those with a pogressive attitude,curiosity and innovation....<br /><span>Interested?</span></p>
       </div>
       <div className="join-header-body">
         <div className="join-header-body-col">
-          <p className="join-header-body-col-title1">We welcome people with a relentless passion, an agile mindset, and a fast-learning culture</p>
-          <p className="join-header-body-col-title2">Embark on a journey that goes beyond just a job. At Leapfrog, you will get an environment that fosters growth, learning, and collaboration. A place which values diverse perspectives, accountable freedom, pushes you to reach your new height, and celebrates both small and big wins.</p>
+          <p className="join-header-body-col-title1">We are open to those with boundless eagerness,an adaptable perspective and a dedication to swift learning.</p>
+          <p className="join-header-body-col-title2">
+Join us on a transformative journey that extends beyond mere employment. At Leapfrog, you'll discover an atmosphere that nurtures development, education, and teamwork. It's a space that embraces varied viewpoints, encourages responsible autonomy, motivates you to strive for excellence, and acknowledges achievements of all sizes.
+
+
+
+
+
+</p>
           <div className='case-card-button'>
             <span className='request'>👋 We're hiring!</span>
             <Link className='case-card-box' to={`/case-study-details`}>

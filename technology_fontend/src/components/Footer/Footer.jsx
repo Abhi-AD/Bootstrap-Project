@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
                         <div className="col-lg-3">
                             <div className="footer_block">
-                                <h3 className="footer_title">We are TopaBhumi</h3>
+                                <h3 className="footer_title">We are TapoBhumi</h3>
                                 <ul>
                                     <li><Link className='link_footer' to='/about'><span>About us</span></Link></li>
                                     <li><Link className='link_footer' to='/resources'><span>Resource</span></Link></li>

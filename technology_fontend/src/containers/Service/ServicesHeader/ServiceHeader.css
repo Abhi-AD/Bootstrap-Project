@@ -69,7 +69,7 @@
 }
 
 .case-card-box:hover {
-     background-color: var(--main-color);
+     background-color: var(--linkdin-color);
      color: white;
 }
 
