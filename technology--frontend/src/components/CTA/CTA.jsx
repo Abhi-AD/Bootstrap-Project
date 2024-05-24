@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './CTA.css'
 import { FaArrowRight, FaFilePdf } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const CTA = () => {
+export default function CTA() {
      const [books, setBooks] = useState([]);
      useEffect(() => {
           const fetchBlogs = async () => {
                try {
-                    const responseAll = await axios.get('http://127.0.0.1:8000/api/visit/book/');
-                    // setBooks(responseAll.data);
+                    const responseAll = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/book/`);
                     const filterData = responseAll.data.slice(0, 3);
                     setBooks(filterData);
                } catch (error) {
@@ -30,10 +29,10 @@ const CTA = () => {
                          </p>
                     </div>
                     <div className="col_blog row js-scroll fade-in fade-in-bottom">
-                         {books.map(books => (
-                              <div className="col">
+                         {books.map((books,index) => (
+                              <div className="col" key={index}>
                                    <img src={books.image} alt={books.title} />
-                                   <p className='desc'>{books.description.slice(0,100)}</p>
+                                   <p className='desc'>{books.description.slice(0, 100)}</p>
                                    <Link className='button' to={`/book/${books.id}`}>
                                         <FaFilePdf className='fa' /><p className='icon_text'>Get the book</p><FaArrowRight className='fa' />
                                    </Link>
@@ -45,5 +44,3 @@ const CTA = () => {
           </div>
      )
 }
-
-export default CTA

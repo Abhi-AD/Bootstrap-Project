@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaMattressPillow } from 'react-icons/fa6';
 import { MdOutlineCelebration, MdLockOpen, MdEmojiEmotions, MdCrueltyFree } from 'react-icons/md';
 
@@ -34,7 +33,7 @@ const JoinService = () => {
     return (
         <div className='service-innovation'>
             <div className="service-innovation-title">
-                <h2 className='service-innovation-title-header'>Enhancing your <span> life's palette</span></h2>
+                <h2 className='service-innovation-title-header'>Enhancing your <span> life&apos;s palette</span></h2>
                 <p className='service-innovation-title-desc'>Navigate the digital landscapes with our expert guidance.</p>
             </div>
             <div className="service-innovation-row js-scroll fade-in fade-in-bottom">

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaCalendarAlt, FaCheckCircle, FaGrin, FaUsers } from "react-icons/fa";
 import './Panel.css'
 const Panel = () => {

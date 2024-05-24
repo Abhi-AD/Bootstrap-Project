@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './People.css'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaLinkedin } from "react-icons/fa";
@@ -10,7 +10,7 @@ const People = () => {
      useEffect(() => {
           const fetchBlogs = async () => {
                try {
-                    const responseAll = await axios.get('http://127.0.0.1:8000/api/visit/person/');
+                    const responseAll = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/person/`);
                     setPeoples(responseAll.data)
                } catch (error) {
                     console.error('Error fetching blogs:', error);
@@ -26,14 +26,14 @@ const People = () => {
                     <h2><span>World-class people, </span> making a dent in the universe</h2>
                </div>
                <div className="team ">
-                    {peoples.map(people => (
-                         <div className="people_card" >
-                              <img src={people.image}alt={people.name} className='js-scroll fade-in fade-in-bottom' />
+                    {peoples.map((people,index) => (
+                         <div className="people_card" key={index} >
+                              <img src={people.image} alt={people.name} className='js-scroll fade-in fade-in-bottom' />
                               <div className="team__infos">
                                    <h3>{people.name} </h3>
                                    <span>{people.post} </span>
-                                   <p>{people.blog.slice(0, 200)+'....'}</p>
-                                   <Link className='profile-link' to={`${people.url }`}>
+                                   <p>{people.blog.slice(0, 200) + '....'}</p>
+                                   <Link className='profile-link' to={`${people.url}`}>
                                         <FaLinkedin />
                                         <span>Linkedin</span>
                                         <FaArrowRight />

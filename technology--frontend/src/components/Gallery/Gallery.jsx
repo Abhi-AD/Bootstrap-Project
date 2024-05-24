@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +13,8 @@ function Gallery() {
         autoplay: true,
         speed: 2000,
         autoplaySpeed: 2000,
-        cssEase: "linear"
+        cssEase: "linear",
+        pauseOnHover: false
     };
     return (
         <div className="slider-container">

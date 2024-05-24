@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Footer.css';
 import { footer_button, lf_logo_white } from './imports';
 import { FaCodeBranch, FaFacebook, FaGraduationCap, FaInstagram, FaLinkedin, FaPodcast, FaUserFriends } from 'react-icons/fa';
@@ -9,7 +9,7 @@ const Footer = () => {
 
     const handleSubscribe = async () => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/visit/subscriber/', { email });
+            const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/api/visit/subscriber/`, { email });
 
             if (response.status === 201) {
                 alert("You've successfully subscribed to our newsletter!");

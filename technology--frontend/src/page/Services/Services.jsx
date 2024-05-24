@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ServiceAbout, ServiceFooter, ServiceHeader, ServiceInnovation, ServiceWork } from '../../containers/index'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -8,7 +8,7 @@ const Services = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/visit/tabcard/${id}/`)
+    axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/tabcard/${id}/`)
       .then(response => {
         setPost(response.data);
       })

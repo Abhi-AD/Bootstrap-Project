@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Current.css';
 import { MdBadge } from 'react-icons/md';
 import { FaArrowRight, FaLinkedin } from 'react-icons/fa';
@@ -11,10 +11,10 @@ const Current = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const peoplesAll = await axios.get('http://127.0.0.1:8000/api/visit/person/');
-                const jobvacancysAll = await axios.get('http://127.0.0.1:8000/api/visit/jobvacancy/');
-                const peoplesData = peoplesAll.data.slice(0,3);
-                const jobvacancysData = jobvacancysAll.data.slice(0,10);
+                const peoplesAll = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/person/`);
+                const jobvacancysAll = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/jobvacancy/`);
+                const peoplesData = peoplesAll.data.slice(0, 3);
+                const jobvacancysData = jobvacancysAll.data.slice(0, 10);
                 setPeoples(peoplesData)
                 setJobVacancys(jobvacancysData)
             } catch (error) {
@@ -32,8 +32,8 @@ const Current = () => {
                     <p className="current-left-title-desc">Do you think you are a good fit? Apply now. We would love to meet you.</p>
                 </div>
                 <div className="current-left-vaccancy">
-                    {jobvacancys.map(jobvacancy => (
-                        <div key={jobvacancy.id} className="current-left-vaccancy-list">
+                    {jobvacancys.map((jobvacancy,index) => (
+                        <div key={index} className="current-left-vaccancy-list">
                             <MdBadge className='vaccancy-icon' />
                             <div className="vaccancy__info">
                                 <div className="vaccany-des">
@@ -54,8 +54,8 @@ const Current = () => {
                     <h2>Want to <span>talk in-person?</span></h2>
                     <p>Get in touch with one of our recruitment  leads to discuss further.</p>
                 </div>
-                {peoples.map(people => (
-                    <div className="person-detail">
+                {peoples.map((people,index) => (
+                    <div className="person-detail" key={index}>
                         <img src={people.image} alt="img" className='js-scroll fade-in fade-in-bottom' />
                         <div className="person-detail-des">
                             <h3>{people.name}</h3>

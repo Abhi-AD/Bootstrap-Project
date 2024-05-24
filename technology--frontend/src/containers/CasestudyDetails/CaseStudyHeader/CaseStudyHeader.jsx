@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './CaseStudyHeader.css';
 import { Link, useParams } from 'react-router-dom';
 import { FaAirbnb, FaCloudversify, FaEye } from "react-icons/fa6";
@@ -9,7 +9,7 @@ const CaseStudyHeader = () => {
     const { id } = useParams();
     const [casestudy, setPost] = useState(null);
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/visit/casestudy/${id}/`)
+        axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/casestudy/${id}/`)
             .then(response => {
                 setPost(response.data);
             })
@@ -32,14 +32,14 @@ const CaseStudyHeader = () => {
                             <div className="casestudeyheadercol-footer">
                                 {/* <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Fcity_of_seattle_d8b50286e8.png&w=256&q=75" alt="caselogo1" className='casestudeyheadercol-footer-img' />
                                 <img src="https://www.lftechnology.com/_next/image?url=https%3A%2F%2Fstrapi.lftechnology.com%2Fuploads%2Flogo_signetic_0ca3d23a1e.png&w=256&q=75" alt="caselogo2" className='casestudeyheadercol-footer-img' /> */}
-                            <h2 style={{
-                                marginRight:'10px'
-                            }}>ABC</h2>
-                            <h2>XYZ</h2>
+                                <h2 style={{
+                                    marginRight: '10px'
+                                }}>ABC</h2>
+                                <h2>XYZ</h2>
                             </div>
                         </div>
                         <div className="casestudeyheadercol ">
-                            <img className='casestudeyheadercolimg' src={casestudy?.case_study_image?? "N/A"} alt="caseheder" />
+                            <img className='casestudeyheadercolimg' src={casestudy?.case_study_image ?? "N/A"} alt="caseheder" />
                         </div>
                     </div>
 

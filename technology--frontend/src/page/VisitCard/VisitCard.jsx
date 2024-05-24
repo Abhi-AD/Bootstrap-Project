@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import CardDesign from './CardDesign';
 import './VisitCard.css';
@@ -28,15 +28,15 @@ const VisitCard = () => {
     });
 
     const navigate = useNavigate();
-
+    const basUrl= import.meta.env.VITE_REACT_APP_API
     const submitData = async (data) => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/visit/visit/', data);
+            const response = await axios.post(`${basUrl}/api/visit/visit/`, data);
             if (response.status === 201) {
                 alert('Form submitted successfully!');
                 setIsSubmit(true);
                 const id = response?.data?.id;
-                const qrDataString = `http://127.0.0.1:8000/api/visit/visit/${id}`;
+                const qrDataString = `${basUrl}/api/visit/visit/${id}`;
                 setFormData({ ...data, id: id, showQR: true, qrData: qrDataString });
             } else {
                 alert('Form submission failed!');

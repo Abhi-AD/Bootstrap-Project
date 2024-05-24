@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Itemskill.css';
 import { FaMattressPillow } from 'react-icons/fa6';
 import { MdOutlineCelebration, MdLockOpen, MdEmojiEmotions, MdCrueltyFree } from "react-icons/md";

@@ -1,4 +1,3 @@
-import React from 'react'
 import './ServiceWork.css'
 import { FaBuilding, FaProjectDiagram } from "react-icons/fa";
 import servicework from '../../../assests/img/Service/servicework.png'
@@ -8,7 +7,7 @@ const ServiceWork = () => {
           <div className='service-work'>
                <div className="service-work-title">
                     <h2 className='service-work-title-header'>How we <span>work together</span></h2>
-                    <p className='service-work-title-desc'>When we design, diagram, and plan well the right code falls out of our fingers naturally. That's why we don't jump into coding immediately without discovery.</p>
+                    <p className='service-work-title-desc'>When we design, diagram, and plan well the right code falls out of our fingers naturally. That&apos;s why we don&apos;t jump into coding immediately without discovery.</p>
                     <img src={servicework} alt="servicework" className='servicework' />
 
                     <div className="service-work-innovation-row js-scroll fade-in fade-in-bottom">

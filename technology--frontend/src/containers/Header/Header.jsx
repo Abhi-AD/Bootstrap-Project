@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './Header.css';
 import src from '../../assests/video/Header.mp4';
 import { FaArrowRight } from 'react-icons/fa';

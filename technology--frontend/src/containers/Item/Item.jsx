@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Item.css';
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ const Item = () => {
     const [activeTab, setActiveTab] = useState('');
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/visit/tabcard/')
+        fetch(`${import.meta.env.VITE_REACT_APP_API}/api/visit/tabcard/`)
             .then(response => response.json())
             .then(data => {
                 setTabCards(data);
@@ -22,17 +22,16 @@ const Item = () => {
     const openItem = (itemname) => {
         setActiveTab(itemname);
     };
-    console.log(activeTab, "activeTab")
 
     return (
         <div className='service'>
             <div className="tab-header-service">
                 <ul className="tab-header__list">
-                    {tabCards.map(tabCard => (
-                        <li key={tabCard.id} className='tab-item'>
+                    {tabCards.map((tabCard,index)=> (
+                        <li key={index} className='tab-item'>
                             <Link
                                 className={
-                                   `${ activeTab === tabCard.title ? 'tablinks' : 'tablinks'} ${ activeTab === tabCard.title ? 'tabactive' : 'none'}`
+                                    `${activeTab === tabCard.title ? 'tablinks' : 'tablinks'} ${activeTab === tabCard.title ? 'tabactive' : 'none'}`
                                 }
                                 onClick={() => openItem(tabCard.title)}>
                                 <span className='tab-header__item'>

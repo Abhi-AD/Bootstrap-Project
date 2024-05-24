@@ -1,7 +1,5 @@
-import React from 'react'
-import { Brand, Connect, Termional } from '../../components/index'
+import { Brand, CTAs, Connect, Termional } from '../../components/index'
 import { Casestudy, Header, Item, ItemSkill, Parnter } from '../../containers/index'
-import CTA from '../../components/CTA/CTA'
 
 const Home = () => {
      return (
@@ -13,7 +11,7 @@ const Home = () => {
                <Casestudy />
                <ItemSkill />
                <Parnter />
-               <CTA />
+               <CTAs />
                <Connect />
           </div>
      )

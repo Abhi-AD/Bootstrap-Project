@@ -1,4 +1,3 @@
-import React from 'react';
 import { microsoft, laudio, keller, memora_health, pingidentity, ucsf, phil, macmillan } from './imports';
 import './Brand.css';
 
@@ -7,7 +6,7 @@ const Brand = () => {
           <div className="technology__brand brand__padding">
                <div className='container'>
                     <h2 className='title'>Trusted by 150 <span className='plus'>+</span> enterprises, scale-ups and startups.</h2>
-                    <p class="fs-lead">In the realm of digital evolution,we lead the change pioneering the future of transformative solutions. </p>
+                    <p className="fs-lead">In the realm of digital evolution,we lead the change pioneering the future of transformative solutions. </p>
                </div>
                <div className="image-container ">
                     <img src={microsoft} alt='microsoft' />

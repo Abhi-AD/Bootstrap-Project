@@ -1,4 +1,4 @@
-# React-Django-TapaBhumi
+# React-Django-TapoBhumi
 This is a web application built with React for the frontend and Django for the backend.
 
 ## Features
@@ -37,19 +37,19 @@ To get a local copy of this project running, follow these steps:
 
 1. Technology Fontend:
      ``` bash
-     cd technology_fontend
+     cd technology--fontend
      ```
 2. Install dependencies:
      ```bash
-     npm install
+     pnpm install
      ```
 3. Start the development server:
      ```bash
-     npm start
+     pnpm dev
      ```
 4. Access the React app at 
      ```bash
-     http://localhost:3000 
+     http://localhost:5173
      ```
      in your browser.
 

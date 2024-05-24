@@ -1,4 +1,3 @@
-import React from 'react'
 import './JoinHeader.css'
 import joinheader from '../../../assests/img/joinheader.png'
 import { Link } from 'react-router-dom'
@@ -14,17 +13,17 @@ const JoinHeader = () => {
         <div className="join-header-body-col">
           <p className="join-header-body-col-title1">We are open to those with boundless eagerness,an adaptable perspective and a dedication to swift learning.</p>
           <p className="join-header-body-col-title2">
-Join us on a transformative journey that extends beyond mere employment. At Leapfrog, you'll discover an atmosphere that nurtures development, education, and teamwork. It's a space that embraces varied viewpoints, encourages responsible autonomy, motivates you to strive for excellence, and acknowledges achievements of all sizes.
+            Join us on a transformative journey that extends beyond mere employment. At Leapfrog, you&apos;ll discover an atmosphere that nurtures development, education, and teamwork. It&apos;s a space that embraces varied viewpoints, encourages responsible autonomy, motivates you to strive for excellence, and acknowledges achievements of all sizes.
 
 
 
 
 
-</p>
+          </p>
           <div className='case-card-button'>
-            <span className='request'>👋 We're hiring!</span>
+            <span className='request'>👋 We&apos;re hiring!</span>
             <Link className='case-card-box' to={`/case-study-details`}>
-              <div class="icon-text-container">
+              <div className="icon-text-container">
                 <span>get in touch</span>
                 <FaArrowRight className='' />
               </div>

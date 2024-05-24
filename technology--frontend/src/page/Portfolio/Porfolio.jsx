@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Porfolio_Style.css';
 // import './Portfolio_vendor.css';
 import img from '../../assests/Porfolio/intro-bg.jpg'
@@ -15,7 +15,7 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/visit/visit/${id}/`);
+        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/visit/${id}/`);
         setPorfolio(response.data);
       } catch (error) {
         console.error('Error fetching post data: ', error);
@@ -32,7 +32,7 @@ const Portfolio = () => {
           <div className="porfolio_header">
             <div className="porfolio_header-text">
               <div className="porfolio_header-text_name">
-                <img src={line} className='porfolio_header_line' alt="" /> Hello, I'm <p> {porfolio?.name}</p></div>
+                <img src={line} className='porfolio_header_line' alt="" /> Hello, I&apos;m <p> {porfolio?.name}</p></div>
               <h1 className="porfolio_header-text_des">
                 I create marketing <br />
                 strategies for your <br />

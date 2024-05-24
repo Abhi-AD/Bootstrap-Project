@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import{ useEffect, useState } from 'react'
 import './ApplyForm.css'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom'
@@ -43,7 +43,7 @@ const ApplyForm = () => {
 
 
      useEffect(() => {
-          axios.get(`http://127.0.0.1:8000/api/visit/jobvacancy/${id}/`)
+          axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/jobvacancy/${id}/`)
                .then(response => {
                     setPost(response.data);
                })
@@ -54,7 +54,7 @@ const ApplyForm = () => {
 
      const JobApplication = async (value) => {
           try {
-               const response = await axios.post(`http://127.0.0.1:8000/api/visit/jobapplicationform1/`, value)
+               const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API}/api/visit/jobapplicationform1/`, value)
                console.log(response, "response")
                if (response.status === 201) {
                     alert('JobApplication submitted successfully!');

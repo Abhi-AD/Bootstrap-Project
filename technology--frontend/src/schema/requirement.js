@@ -1,6 +1,5 @@
 import * as yup from 'yup';
 
-// Define a regular expression for 10-digit phone number
 export const MOBILE_NUMBER_PATTERN = /^[0-9]{10}$/;
 
 export const visitCardSchema = yup.object().shape({

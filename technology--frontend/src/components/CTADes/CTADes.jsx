@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaEye } from "react-icons/fa6";
 import axios from 'axios';
@@ -8,7 +8,7 @@ const CTADes = () => {
     const [book, setPost] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/visit/book/${id}/`)
+        axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/book/${id}/`)
             .then(response => {
                 setPost(response.data);
             })

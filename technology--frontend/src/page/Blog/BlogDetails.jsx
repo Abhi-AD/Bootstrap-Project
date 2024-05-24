@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './BlogDetails.css';
 import './AnimateOnScroll.css';
@@ -16,7 +16,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/visit/blog/${id}/`);
+        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/blog/${id}/`);
         setPost(response.data);
       } catch (error) {
         console.error('Error fetching post data: ', error);
@@ -28,7 +28,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const responseAll = await axios.get(`http://127.0.0.1:8000/api/visit/category/`);
+        const responseAll = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/category/`);
         setCategory(responseAll.data);
       } catch (error) {
         console.error('Error fetching categories:', error);

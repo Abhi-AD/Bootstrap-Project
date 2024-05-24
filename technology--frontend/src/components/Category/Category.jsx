@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Category.css';
 import axios from 'axios';
 import { FaSearch, FaTimes } from 'react-icons/fa';
@@ -8,7 +8,7 @@ const Category = () => {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [categories, setCategories] = useState([]);
 
-  const baseUrl = "http://127.0.0.1:8000";
+  const baseUrl = import.meta.env.VITE_REACT_APP_API;
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -36,8 +36,8 @@ const Category = () => {
               Blog
             </Link>
           </li>
-          {categories.map((category) => (
-            <li key={category.id} className="category-header_item">
+          {categories.map((category, index) => (
+            <li key={index} className="category-header_item">
               {/* <Link to={`/${category.name ? category.name.toLowerCase() : ''}`}>
                 {category.name}
               </Link> */}

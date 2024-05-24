@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Contact.css'
 import Location from '../../containers/Location/Location'
 import contact from '../../assests/img/contact.png'
@@ -12,7 +12,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 const Contact = () => {
   const [setSelectedCountry] = useState();
-  const baseUrl = "http://localhost:3000"
+  const baseUrl = import.meta.env.VITE_REACT_APP_API
   const defaultValue = {
     name: '',
     email: '',
@@ -48,7 +48,7 @@ const Contact = () => {
     };
 
     fetchBlogs();
-  }, []);
+  }, [baseUrl]);
 
 
   const createContact = async (value) => {
@@ -83,7 +83,7 @@ const Contact = () => {
         <div className="contact_header">
           <h1 className="contact_title">contact us</h1>
           <p className="contact_des">Join us in  <span>Shaping</span></p>
-          <p className="desc_contact">Whether you're a new business aiming to kickstart operations or a large corporation seeking expansion, we have solutions tailored to meet your needs.</p>
+          <p className="desc_contact">Whether you&apos;re a new business aiming to kickstart operations or a large corporation seeking expansion, we have solutions tailored to meet your needs.</p>
         </div>
 
 
@@ -92,7 +92,7 @@ const Contact = () => {
             <img src={contact} alt="contact" className='js-scroll fade-in fade-in-bottom' />
             <div className="vacancy">
               <h2 className='vacancy_title'>Searching for employment?</h2>
-              <p className="vacancy_desc">Exciting roles are continuously emerging, ready for you to seize immediately. If you don't spot the ideal match right now, don't fret – we'll be sure to notify you as soon as new opportunities arise!</p>
+              <p className="vacancy_desc">Exciting roles are continuously emerging, ready for you to seize immediately. If you don&apos;t spot the ideal match right now, don&apos;t fret – we&apos;ll be sure to notify you as soon as new opportunities arise!</p>
               <Link className="apply_now" to={'/job'}>
                 <span style={{ paddingRight: '10px' }}>apply now</span>
                 <FaArrowRight className='fa' />
@@ -100,7 +100,7 @@ const Contact = () => {
             </div>
             <div className="vacancy">
               <h2 className='vacancy_title'>Secure an internship opportunity.</h2>
-              <p className="vacancy_desc">Explore our internship opportunities and find out how to reach out if you're interested in securing an internship position</p>
+              <p className="vacancy_desc">Explore our internship opportunities and find out how to reach out if you&apos;re interested in securing an internship position</p>
               <Link className="apply_now" to={'/job'}>
                 <span style={{ paddingRight: '10px' }}>become an intern</span>
                 <FaArrowRight className='fa' />
@@ -110,7 +110,7 @@ const Contact = () => {
           <div className="contact_form-right">
             <div className="contact_form-right-header">
               <h2 className='contact_form-right-title'>Kindly complete <span>the form </span></h2>
-              <p>We'll swiftly get in touch to explore potential collaboration opportunities. Expect to hear from us within two business days.</p>
+              <p>We&apos;ll swiftly get in touch to explore potential collaboration opportunities. Expect to hear from us within two business days.</p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form__group">
@@ -125,11 +125,11 @@ const Contact = () => {
                 <input type='text' {...register('email')} placeholder='eg.you@example.con' />
                 {errors.email && <p className='error-message'>{errors.email.message}</p>}
                 <hr />
-                <p>We won't send you spam.</p>
+                <p>We won&apos;t send you spam.</p>
               </div>
               <div className="form__group">
                 <label>How would you like to collaborate with us? </label>
-                <p>We offer various options for engagement.</p>
+                <p>We offer various options for engagement.</p>
                 {engagementchoices.map((engagementchoice, index) => (
                   <button className="button__radio" type="button" key={index}>
                     <input

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Termional.css';
 import { RiDoubleQuotesR } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Termional = () => {
     useEffect(() => {
         const fetchPersons = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/visit/person/');
+                const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API}/api/visit/person/`);
                 setPersons(response.data.slice(0, 2));
             } catch (error) {
                 console.error('Error fetching persons:', error);
