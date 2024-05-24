@@ -62,12 +62,12 @@ const Menu = ({ isServiceOpen, isJoinOpen, toggleService, toggleJoin, toggleMenu
                 {isJoinOpen && (
                     <div className={`header_dropdown`} ref={node}>
                         <Link className='header-sublist' to={`/join`} onClick={handleNavLinkClick}>
-                            <PiRectangleThin className='header-icon' />
+                            {/* <PiRectangleThin className='header-icon' /> */}
                             <p className="header__dropdown-title">Careers</p>
                             <p className="header__dropdown-des">From concept to completion, the design and delivery of technology and products</p>
                         </Link>
                         <Link className='header-sublist' onClick={handleNavLinkClick}>
-                            <PiRectangleThin className='header-icon' />
+                            {/* <PiRectangleThin className='header-icon' /> */}
                             <p className="header__dropdown-title">Fellowship</p>
                             <p className="header__dropdown-des">A custom-built group of developers and designers, fine-tuned for delivery</p>
                         </Link>

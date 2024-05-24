@@ -16,7 +16,7 @@
      color: var(--main-color);
 }
 
-/* Grid */
+
 .location_grid {
      display: grid;
      grid-template-columns: repeat(3, 1fr);
@@ -36,8 +36,9 @@
      position: relative;
      display: block;
      object-fit: cover;
-     max-width: 100%; 
-     height: auto; 
+     max-width: 100%;
+     height: auto;
+     border: 1px solid #000;
 }
 
 
@@ -54,4 +55,37 @@
 .post-card_location p {
      font-size: 1rem;
      line-height: 24px;
+}
+
+@media screen and (max-width: 786px) {
+     .location {
+          padding: 1rem 2rem;
+     }
+
+     .location_title {
+          font-size: 2rem;
+          padding-right: 0;
+     }
+
+     .location_grid {
+          grid-template-columns: repeat(1, 1fr);
+     }
+
+     .col_location {
+          width: 100%;
+     }
+
+     .post-card_location {
+          padding: 1rem;
+     }
+
+     .post-card_location h3 {
+          font-size: 1.1rem;
+          line-height: 28px;
+     }
+
+     .post-card_location p {
+          font-size: 0.9rem;
+          line-height: 20px;
+     }
 }

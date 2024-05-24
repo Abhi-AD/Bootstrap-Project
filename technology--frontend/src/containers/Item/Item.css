@@ -41,15 +41,13 @@
      font-size: 30px;
 }
 
-
 .tabactive {
      color: var(--color-bg);
-     background-color: var( --linkdin-color);
+     background-color: var(--linkdin-color);
      padding-left: 2rem;
      padding-top: 3rem;
      padding-bottom: 3rem;
 }
-
 
 .explore_icon {
      background-color: var(--main-color);
@@ -66,28 +64,17 @@
      border: 1px solid #fff;
 }
 
-
 .explore_icon:hover {
      background-color: var(--color-bg);
      color: var(--main-color);
 }
-
-
-
-
-
-
-
-
-
-
 
 .tab-card {
      padding: 1rem 1rem;
      display: flex;
      color: var(--color-bg);
      justify-content: center;
-     background-color: var( --linkdin-color);
+     background-color: var(--linkdin-color);
 }
 
 .tab-card-col-left {
@@ -95,7 +82,6 @@
      flex: 1;
      width: 55%;
 }
-
 
 .tab-card-col-title {
      font-size: 2rem;
@@ -140,61 +126,69 @@
      width: 300px;
      margin-left: 900px;
      margin-top: -200px;
-
 }
 
-
-
-
-@media only screen and (max-width: 767px) {
-     .tab-card {
-          flex-direction: column;
-          padding: 2rem;
+@media screen and (max-width: 786px) {
+     .tab-header__item {
+          padding: 1rem;
+          font-size: 0.875rem;
      }
 
      .tab-header-service {
-          position: static;
+          position: sticky;
+          top: 0;
+          background-color: var(--color-bg);
+          z-index: 2;
+          width: 100%;
+          overflow-x: auto;
      }
 
-     .tab-card-col {
-          padding: 2rem;
+     .explore_icon {
+          font-size: 0.875rem;
+          padding: 0.75rem;
+          width: 10rem;
+          margin-left: 10rem;
      }
 
-     .tab-card-col img {
-          padding: 0;
-     }
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
      .tab-card {
-          padding: 5rem;
+          flex-direction: column;
+          padding: 0.5rem;
      }
 
-     .tab-card-col {
-          padding: 3rem;
-     }
-}
-
-
-@media only screen and (min-width: 1024px) {
-     .tab-card {
-          padding: 10rem;
+     .tab-card-col-left {
+          margin-top: 0;
+          width: 100%;
      }
 
-     .tab-card-col {
-          padding: 3rem;
+     .tab-card-col-title,
+     .tab-card-col-header {
+          font-size: 1.5rem;
+          text-align: center;
      }
-}
 
-@media only screen and (max-width: 500px) {
-     .tab-header__item .tab-text {
-          display: none;
+     .tab-card-col-header {
+          font-size: 2rem;
+          line-height: 1.2;
      }
-}
 
-@media only screen and (min-width: 768px) {
-     .tab-header__list {
-          flex-direction: row;
+     .tab-card-col-des {
+          font-size: 1rem;
+          line-height: 1.5;
+          margin-bottom: 16px;
+     }
+
+     .tab-card-col-button {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          padding: 0.75rem;
+          font-size: 0.875rem;
+     }
+
+     .tab-card-col-right img {
+          height: 300px;
+          width: 500px;
+          margin-left: 1rem;
+          margin-top: 1rem;
+          align-self: center;
      }
 }

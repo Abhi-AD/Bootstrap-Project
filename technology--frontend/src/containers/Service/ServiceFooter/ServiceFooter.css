@@ -1,34 +1,48 @@
-.service-footer{
+.service-footer {
      padding: 5rem 15rem 5rem 15rem;
      background: var(--back-footer);
      display: flex;
      gap: 1.5rem;
      justify-content: center
 }
-.service-footer-col{
+
+.service-footer-col-button {
+     margin-top: 15px;
+     text-align: left;
+     border: 1px solid var(--color-bg);
+}
+.service-footer-col-button:hover {
+     border: none;
+}
+
+.service-footer-col {
      width: 50%;
      flex: 0 0 auto;
      color: var(--color-bg);
 }
-.service-footer-col-title{
+
+.service-footer-col-title {
      color: #d9d9d9;
      text-transform: uppercase;
      font-weight: 700;
      display: inline-block;
      margin-bottom: 1rem;
 }
-.service-footer-col-header{
+
+.service-footer-col-header {
      font-weight: 700;
      font-size: 2.5rem;
      line-height: 56px;
 }
-.service-footer-col-desc{
+
+.service-footer-col-desc {
      margin: 1rem 0 0;
      font-size: 1.3rem;
      line-height: 28px;
      letter-spacing: 0;
 }
-.service-footer-col img{
+
+.service-footer-col img {
      opacity: 1;
      transform: none;
      transform: translateY(50px);
@@ -37,4 +51,56 @@
      margin-bottom: -12rem;
      max-width: 100%;
      display: block;
+}
+
+@media screen and (max-width: 768px) {
+     .service-footer {
+          padding: 5rem 2rem;
+          background: var(--back-footer);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     .service-footer-col {
+          width: 100%;
+          flex: 0 0 auto;
+          color: var(--color-bg);
+          text-align: center;
+     }
+
+     .service-footer-col img {
+          opacity: 1;
+          transform: translateY(0);
+          height: auto;
+          width: 300px;
+          margin: 0 auto 2rem auto;
+          /* Top and bottom margin of 0, left and right margin auto */
+          max-width: 100%;
+          display: block;
+     }
+
+     .service-footer-col-title {
+          color: #d9d9d9;
+          text-transform: uppercase;
+          font-weight: 700;
+          display: inline-block;
+          font-size: 1rem;
+     }
+
+     .service-footer-col-header {
+          font-weight: 700;
+          font-size: 1rem;
+          margin-top: -2rem;
+          margin-bottom: -1rem;
+     }
+
+
+     .service-footer-col-desc1 {
+          margin: 1rem 0 0;
+          font-size: 1rem;
+          line-height: 15px;
+          letter-spacing: 0;
+     }
+
 }
