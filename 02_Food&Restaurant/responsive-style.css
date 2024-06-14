@@ -1,0 +1,36 @@
+@media (max-width: 1024px) {}
+
+@media (max-width: 991px) {
+     .text-content{
+          width: 100%;
+     }
+     /* navbar */
+     .navigation-wrap .navbar-brand img{
+          height: 3.8125rem;
+     }
+     .navigation-wrap{
+          text-align: center;
+          background-color: var(--black-color);
+     }
+     .navigation-wrap .nav-link{
+          line-height: 1.875rem;
+     }
+     /* baner design */
+     .top-banner{
+          padding: 9.374rem 0 0.374rem ;
+     }
+
+}
+
+@media (max-width: 767px) {
+     h1{
+          font-size: 2.8rem;
+     }
+     h2{
+          font-size: 2rem;
+          line-height: 2.06rem;
+     }
+     .top-banner{
+          padding: 10.875rem 0 9.375rem;
+     }
+}
